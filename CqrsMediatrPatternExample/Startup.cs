@@ -1,3 +1,4 @@
+using CqrsMediatrPatternExample.Behaviours;
 using CqrsMediatrPatternExample.DataStore;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -32,6 +33,7 @@ namespace CqrsMediatrPatternExample
             services.AddMediatR(typeof(Startup));
 
             services.AddSingleton<FakeDataStore>();
+          //  services.AddSingleton(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
